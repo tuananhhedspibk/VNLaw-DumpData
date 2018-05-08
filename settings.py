@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 
 INPUT_NEIGHBOR_FILE_NAME = "./input/neighbor_articles.txt"
-INPUT_TOPICS_PRO_FILE_NAME = "./input/phrase_topics_pro.txt"
+INPUT_TOPICS_PRO_FILE_NAME = "./input/phrase_topics_pro_cleaned.txt"
+INPUT_TOPICS_PRO_SRC_FILE_NAME = "./input/phrase_topics_pro.txt"
 INPUT_ARTICLE_FILE_NAME = "./input/articles.tsv"
+INPUT_KEYWORDS_TOPICS_DIS_SRC_FILE_NAME = "./input/keyword_topics_distribution.txt"
+INPUT_KEYWORDS_TOPICS_DIS_FILE_NAME = "./input/keyword_topics_distribution_cleaned.txt"
 A_IDS_FILE_NAME = "./input/a_ids.txt"
 
 REDUNDANT_SYMBOL = ["\\t", "\\r", "\\n", "##", "\\", "”",
@@ -21,7 +24,7 @@ REDUNDANT_STRING_PATTERN = ["điều \d{1,2}", "khoản \d{1,2}",
   "cộng hoà xã hội chủ nghĩa việt nam", "độc lập - tự do - hạnh phúc",
   "\d{1,2}\\\.", "[\w]\)", "đ\)"]
 
-FORBIDEN_SYMBOL_TOPICS = ["_", "%", "|", "\\", ":"]
+FORBIDEN_SYMBOL_TOPICS = [" ", "(", ")", "-"]
 
 DB_NAME = "test_lda"
 USER_NAME = "anhtt"
