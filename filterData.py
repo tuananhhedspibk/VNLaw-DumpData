@@ -68,8 +68,6 @@ def filter_data_graph(data):
     tmp_kw = remove_sign_of_vietnamese_char(tmp_kw)
     if tmp_kw.isalpha():
       f_p.write(kw + "@" + a_data.values()[0] + "\n")
-    else:
-      print kw
 
   f_p.close()
 

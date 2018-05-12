@@ -26,7 +26,7 @@ REDUNDANT_STRING_PATTERN = ["điều \d{1,2}", "khoản \d{1,2}",
 
 FORBIDEN_SYMBOL_TOPICS = [" ", "(", ")", "-"]
 
-DB_NAME = "test_lda"
+DB_NAME = "VNLaw_development"
 USER_NAME = "anhtt"
 HOST_NAME = "localhost"
 HOST_PASS = "12345678"
