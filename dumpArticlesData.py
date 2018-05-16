@@ -16,9 +16,15 @@ def dump_data(articles_data):
     a_data_splited = a_data.split("\t")
     cur.execute(QUERY_CHECK_EXIST, (a_data_splited[0],))
     exist = cur.fetchall()[0][0]
-    if not exist:
-      cur.execute(QUERY_INSERT_ARTICLES, (a_data_splited[0], a_data_splited[1], a_data_splited[2],
-        a_data_splited[3], a_data_splited[4], a_data_splited[5], a_data_splited[6], a_data_splited[7],
+
+    tmp_content = a_data_splited[2].strip()
+    tmp_content = tmp_content.replace("\\n", "")
+    tmp_content = tmp_content.replace("\\r", "")
+    tmp_content = tmp_content.replace("\\t", "")
+
+    if not exist and len(tmp_content) > 1:
+      cur.execute(QUERY_INSERT_ARTICLES, (a_data_splited[0], a_data_splited[1], a_data_splited[2].strip(),
+        a_data_splited[3].strip(), a_data_splited[4], a_data_splited[5], a_data_splited[6], a_data_splited[7],
         a_data_splited[8], a_data_splited[9], a_data_splited[10], a_data_splited[11], a_data_splited[12],
         a_data_splited[13], a_data_splited[14], a_data_splited[15], a_data_splited[16], '', '', a_data_splited[17], a_data_splited[18]))
   db_con.commit()
