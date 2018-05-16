@@ -26,10 +26,10 @@ REDUNDANT_STRING_PATTERN = ["điều \d{1,2}", "khoản \d{1,2}",
 
 FORBIDEN_SYMBOL_TOPICS = [" ", "(", ")", "-"]
 
-DB_NAME = "VNLaw_development"
-USER_NAME = "anhtt"
-HOST_NAME = "localhost"
-HOST_PASS = "12345678"
+DB_NAME = "vnlaw_backup"
+USER_NAME = "root"
+HOST_NAME = "lkbc-pg-1"
+HOST_PASS = "root"
 
 QUERY_CHECK_RECORD_EXIST = """
   SELECT exists(SELECT 1 from articles where id=(%s))
