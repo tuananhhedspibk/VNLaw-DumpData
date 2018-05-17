@@ -31,8 +31,12 @@ USER_NAME = "anhtt"
 HOST_NAME = "localhost"
 HOST_PASS = "12345678"
 
-QUERY_CHECK_EXIST = """
+QUERY_CHECK_RECORD_EXIST = """
   SELECT exists(SELECT 1 from articles where id=(%s))
+"""
+
+QUERY_CHECK_TABLE_EXIST = """
+  SELECT count(*) FROM information_schema.tables WHERE table_name = 'articles';
 """
 
 QUERY_INSERT_TOPICS = """
@@ -48,4 +52,35 @@ QUERY_INSERT_ARTICLES = """
     numerical_symbol, public_day, day_report, article_type, source, agency_issued, the_signer, signer_title,
     scope, effect_day, effect_status, count_click, topics, neighbors, created_at, updated_at)
   VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+"""
+
+CMD_CREATE = """
+  CREATE TABLE articles (
+    id TEXT NOT NULL,
+    title TEXT,
+    content TEXT,
+    full_html TEXT,
+    index_html TEXT,
+    numerical_symbol TEXT,
+    public_day DATE,
+    day_report DATE,
+    article_type TEXT,
+    source TEXT,
+    agency_issued TEXT,
+    the_signer TEXT,
+    signer_title TEXT,
+    scope TEXT,
+    effect_day DATE,
+    effect_status TEXT,
+    count_click INTEGER,
+    topics TEXT,
+    neighbors TEXT,
+    created_at DATE,
+    updated_at DATE,
+    PRIMARY KEY (id)
+  )
+"""
+
+CMD_DELETE = """
+  DROP TABLE articles
 """
