@@ -26,7 +26,7 @@ REDUNDANT_STRING_PATTERN = ["điều \d{1,2}", "khoản \d{1,2}",
 
 FORBIDEN_SYMBOL_TOPICS = [" ", "(", ")", "-"]
 
-DB_NAME = "vnlaw_backup"
+DB_NAME = "vnlaw"
 USER_NAME = "root"
 HOST_NAME = "lkbc-pg-1"
 HOST_PASS = "root"
